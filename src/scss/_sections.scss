@@ -1,0 +1,410 @@
+// Hero, Banner
+.section__hero {
+  background-image: linear-gradient(90deg, rgba(0, 0, 0, 0.95), rgba(0, 0, 0, 0.0)), url('../images/heros/geral.webp');
+  background-size: 100%, cover;
+  background-repeat: repeat, no-repeat;
+
+  &.debutante {
+    background-image: url('../images/heros/debutante.png');
+    background-position: left 55% center;
+  }
+
+  &.bodas {
+    background-image: url('../images/heros/bodas.png');
+    background-position: left 75% top 15%;
+  }
+
+  &.casamento {
+    background-image: url('../images/heros/casamento.png');
+    background-position: right 70% top 15%;
+  }
+
+  .container {
+    margin-top: 4rem;
+    min-height: calc(100vh - 4rem);
+    color: white;
+    padding: 4rem 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  h1 {
+    font-family: $header-font;
+    font-size: 4rem;
+    letter-spacing: 3px;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    color: white;
+    max-width: 60%;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+
+    span {
+      display: block;
+      font-size: 1rem;
+    }
+  }
+
+  p {
+    max-width: 60%;
+  }
+
+  hr {
+    width: 8rem;
+    background-color: white;
+    border: none;
+    height: .1rem;
+    margin: 1rem 0;
+  }
+}
+
+// Cenário
+.section__cenario {
+  padding: $section-padding;
+
+  p {
+    width: 60%;
+  }
+
+  .quadros {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(4, 1fr);
+
+    figure.quadro {
+      position: relative;
+      height: 400px;
+      padding: 0;
+      margin: 0;
+      transition: all .3s;
+      box-shadow: $shadow;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      figcaption {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        background: transparent linear-gradient(180deg, #00000000 0%, #000000 100%) 0% 0% no-repeat padding-box;
+        color: white;
+        padding: 1rem;
+        width: 100%;
+        height: 50%;
+        display: flex;
+        align-items: flex-end;
+      }
+
+      &:hover {
+        transform: scale(1.25);
+        transition: all .3s;
+        z-index: 100;
+      }
+    }
+  }
+}
+
+// Espaço
+.section__espaco {
+  padding: $section-padding;
+
+  p.copy {
+    max-width: 60%;
+  }
+
+  .slide {
+    box-shadow: $shadow;
+  }
+}
+
+// Depoimentos
+.section__depoimentos {
+  padding: $section-padding;
+  background-color: white;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+
+  .depoimentos {
+    display: flex;
+    gap: 2%;
+    margin-bottom: 2rem;
+
+    .depoimento {
+      background-color: #F1F1F1;
+      flex-basis: 32%;
+      padding: 3rem 2rem;
+      position: relative;
+
+      blockquote {
+        font-size: 1.1rem;
+        margin: 0 0 2rem;
+      }
+
+      img {
+        margin-bottom: 1rem;
+      }
+
+      cite {
+        font-style: normal;
+        position: absolute;
+        background-color: white;
+        border-radius: 4rem;
+        margin-top: .5rem;
+        gap: 1rem;
+        padding: .25rem 1rem .25rem .25rem;
+        width: 60%;
+        left: 50%;
+        bottom: -1.5rem;
+        transform: translateX(-50%);
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+
+        span {
+          &.name {
+            font-size: .75rem;
+
+            span {
+              display: block;
+              font-size: 1.05rem;
+              height: 2rem;
+            }
+          }
+
+          &.letter {
+            background-color: #283e46;
+            border-radius: 50%;
+            width: 3rem;
+            height: 3rem;
+            color: white;
+            text-align: center;
+            line-height: 3rem;
+          }
+        }
+      }
+
+      .depoimento-nome {
+        width: 50%;
+        display: flex;
+        flex-direction: row;
+        position: absolute;
+        background-color: white;
+        border-radius: 4rem;
+        margin-left: 1.8rem;
+        margin-top: .5rem;
+        bottom: -1.5rem;
+
+        .letra {
+          margin-right: 1rem;
+          background-color: #283e46;
+          border-radius: 50%;
+          width: 3rem;
+          height: 3rem;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          font-size: 2rem;
+          font-weight: 600;
+          color: white;
+        }
+
+        .letra--nome {
+          font-weight: 600;
+        }
+
+        .letra--google {
+          font-size: .7rem;
+          color: #7d8b90;
+        }
+      }
+    }
+  }
+}
+
+// Fotos
+.section__fotos {
+  padding: $section-padding;
+
+  p {
+    width: 60%;
+    margin: 0 auto 2rem;
+    text-align: center;
+  }
+
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+
+    li {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      cursor: pointer;
+      box-shadow: $shadow;
+      transition: all .3s;
+
+      &:hover {
+        transform: scale(1.15);
+        transition: all .3s;
+        z-index: 100;
+      }
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      &:nth-child(1) {
+        grid-row: 1 / span 2;
+      }
+
+      &:nth-child(6) {
+        grid-column: 3 / 5;
+        grid-row: 2;
+        height: 186.55px;
+      }
+    }
+  }
+}
+
+/* Orçamento */
+.section__orcamento {
+  background-color: white;
+  padding: $section-padding;
+
+  p.copy {
+    max-width: 60%;
+  }
+
+  // Lista de informações
+  .grid {
+    grid-template-columns: 2fr 1fr;
+  }
+
+  .form__infos {
+    ul {
+      margin: 0;
+      padding: 0;
+
+      li {
+        display: flex;
+        background-color: #dbdbdb;
+        margin-bottom: 1rem;
+        gap: 1rem;
+        padding: 1rem;
+        border-radius: .5rem;
+
+        .img {
+          background-color: #101010;
+          width: 3rem;
+          height: 3rem;
+          border-radius: 50%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          img {
+            width: 1.5rem;
+            height: auto;
+          }
+        }
+
+        span {
+          display: block;
+          font-size: 0.875rem;
+          text-transform: uppercase;
+        }
+
+        address,
+        a {
+          color: #101010;
+        }
+      }
+    }
+  }
+
+  .form__container {
+    padding-right: 1rem;
+    border-right: 1px solid #ccc;
+
+    label {
+    }
+  }
+
+  .data {
+    appearance: none;
+    background-image: url('../images/calendar.svg');
+    background-position: right 10px center;
+    background-repeat: no-repeat;
+    background-size: 16px;
+  }
+
+  .botao {
+    background-color: $primary;
+  }
+}
+
+/* Textos (privacidade e termos de uso) */
+.section__texts {
+  padding: 6rem 0 3rem;
+}
+
+//corporativo
+#corporativo{
+  .tpl__header{
+    .container{
+      justify-content: center;
+      nav{
+        display: none;
+      }
+    }
+  }
+
+  .section__hero{
+    background-image: url("../images/bg__corporativo.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 10% 50%;
+    .container{
+      div{
+        h1, p{
+          padding-right: 18rem;
+        }
+      }
+    }
+  }
+
+  .section__fotos{
+    .container{
+      .gallery{
+        li:nth-child(6){
+          height: auto;
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: 768px){
+    .section__hero{
+      background-size: auto;
+      background-position: 77% -7rem;
+      .container{
+        div{
+          backdrop-filter: blur(.2rem);
+          background-color: rgba(0, 0, 0, 0.3);
+          padding: 1rem .5rem;
+          border-radius: .5rem;
+          h1, p{
+            padding: 0;
+          }
+        }
+      }
+    }
+    .section__cenario{
+      padding: 0;
+    }
+  }
+}
